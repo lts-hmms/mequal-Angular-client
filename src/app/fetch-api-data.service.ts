@@ -30,7 +30,7 @@ export class FetchApiDataService {
 
   public userLogin(loginDetails: any): Observable<any> {
     return this.http
-      .post(apiUrl + 'users', loginDetails)
+      .post(apiUrl + 'login', loginDetails)
       .pipe(catchError(this.handleError));
   }
 
