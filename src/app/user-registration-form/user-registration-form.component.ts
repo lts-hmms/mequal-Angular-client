@@ -24,7 +24,7 @@ export class UserRegistrationFormComponent implements OnInit {
     public snackBar: MatSnackBar
   ) {}
 
-  // is called once the component has received all its inputs (all its data-bound properties) from the calling component 
+  // is called once the component has received all its inputs (all its data-bound properties) from the calling component
   ngOnInit(): void {}
 
   // this function is responsible for sending the form inputs to the backend
@@ -32,8 +32,6 @@ export class UserRegistrationFormComponent implements OnInit {
     this.fetchApiData.userRegistration(this.userData).subscribe(
       (result) => {
         // logic for successfull user registration
-        console.log(result);
-        // closes the dialog modal on sucess
         this.dialogRef.close();
         this.snackBar.open('User registration successful', 'OK', {
           duration: 2000,
@@ -41,9 +39,13 @@ export class UserRegistrationFormComponent implements OnInit {
       },
       (result) => {
         console.log(result);
-        this.snackBar.open('User registration successful', 'OK', {
-          duration: 2000,
-        });
+        this.snackBar.open(
+          'User registration failed. Please try again.',
+          'OK',
+          {
+            duration: 2000,
+          }
+        );
       }
     );
   }
