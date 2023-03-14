@@ -1,0 +1,33 @@
+.movie-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: start;
+  align-content: center;
+}
+
+.movie-card {
+  margin: 20px;
+}
+
+.mat-card-title {
+  font-weight: 500;
+}
+
+.img-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.movie-img {
+  width: 300px;
+  height: 450px;
+}
+
+.faves-row {
+  justify-content: center;
+}
+
+.faves-icon {
+  transform: scale(1.5);
+}

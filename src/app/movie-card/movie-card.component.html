@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<div class="movie-list">
+  <mat-card class="movie-card" *ngFor="let movie of movies; let i = index">
+    <div class="img-wrapper">
+      <img class="movie-img" src="{{ movie.ImageUrl }} " />
+    </div>
+    <mat-card-header>
+      <mat-card-title class="mat-card-title">{{ movie.Title }}</mat-card-title>
+      <mat-card-subtitle
+        >Directed by: {{ movie.directorsNames }}</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-actions class="movie-card-footer">
+      <button mat-button>Genre</button>
+      <button mat-button>Director</button>
+      <button mat-button>Synopsis</button>
+    </mat-card-actions>
+    <mat-card-actions class="faves-row">
+      <mat-icon (click)="toggleFav(movie._id)" class="faves-icon">{{
+        this.faves.includes(movie._id) ? "favorite" : "favorite_border"
+      }}</mat-icon>
+    </mat-card-actions>
+  </mat-card>
+</div>
