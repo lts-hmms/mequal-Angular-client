@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
-  // directors: any[] = [];
+  directors: any[] = [];
   faves: any[] = [];
 
   constructor(
@@ -20,12 +20,8 @@ export class MovieCardComponent implements OnInit {
   // same logic as componentDidMount in react
   ngOnInit(): void {
     this.getMovies();
+    this.getDirectors();
     this.getFaves();
-    // let directorsNames = this.movies.map((movie) => {
-    //   return movie.Directors.map((director: any) => director.Name);
-    // });
-
-    // console.log(directorsNames);
   }
 
   getMovies(): void {
@@ -41,6 +37,12 @@ export class MovieCardComponent implements OnInit {
       this.faves = res.Favslist;
       console.log(this.faves);
       return this.faves;
+    });
+  }
+
+  getDirectors(): void {
+    this.directors = this.movies.map((movie) => {
+      return movie.Directors.map((director: any) => director.Name);
     });
   }
 
