@@ -1,1 +1,9 @@
-<p>genre-dialog works!</p>
+<mat-tab-group
+  fitInkBarToContent
+  *ngFor="let genre of genresArr; let i = index"
+>
+  <mat-tab label="First">genre.Name</mat-tab>
+  <mat-tab label="Second">Content 2</mat-tab>
+  <mat-tab label="Third">Content 3</mat-tab>
+  <mat-tab label="Fourth" disabled>Content 4</mat-tab>
+</mat-tab-group>
