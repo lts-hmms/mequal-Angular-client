@@ -5,9 +5,11 @@
       <img class="movie-img" src="{{ movie.ImageUrl }} " />
     </div>
     <mat-card-header>
-      <mat-card-title class="mat-card-title">{{ movie.Title }}</mat-card-title>
+      <mat-card-title class="mat-card-title"
+        >{{ movie.Title }} ({{ movie.Year }})</mat-card-title
+      >
       <mat-card-subtitle
-        >Directed by: {{ movie.Directors.Name }}</mat-card-subtitle
+        >Directed by: {{ movie.Directors[0].Name }}</mat-card-subtitle
       >
     </mat-card-header>
     <mat-card-actions class="movie-card-footer">
@@ -17,7 +19,7 @@
     </mat-card-actions>
     <mat-card-actions class="faves-row">
       <mat-icon (click)="toggleFav(movie._id)" class="faves-icon">{{
-        this.faves.includes(movie._id) ? "favorite" : "favorite_border"
+        this.user.Favslist.includes(movie._id) ? "favorite" : "favorite_border"
       }}</mat-icon>
     </mat-card-actions>
   </mat-card>

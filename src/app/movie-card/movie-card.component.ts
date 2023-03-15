@@ -10,7 +10,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
   directors: any[] = [];
-  faves: any[] = [];
+  user: any = JSON.parse(localStorage.getItem('user') || '') || {};
+  clickEventSubscription: Subscription;
 
   constructor(
     public fetchData: FetchApiDataService,
@@ -20,8 +21,6 @@ export class MovieCardComponent implements OnInit {
   // same logic as componentDidMount in react
   ngOnInit(): void {
     this.getMovies();
-    this.getDirectors();
-    this.getFaves();
   }
 
   getMovies(): void {
@@ -32,26 +31,15 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  getFaves(): void {
-    this.fetchData.getUser().subscribe((res: any) => {
-      this.faves = res.Favslist;
-      console.log(this.faves);
-      return this.faves;
-    });
-  }
-
-  getDirectors(): void {
-    this.directors = this.movies.map((movie) => {
-      return movie.Directors.map((director: any) => director.Name);
-    });
-  }
+  showFaves(): void {}
 
   toggleFav(id: string): void {
     console.log('toggle reached');
-    if (!this.faves.includes(id)) {
+    if (!this.user.Favslist.includes(id)) {
       this.fetchData.addFav(id).subscribe(
         (res) => {
-          this.faves = res.Favslist;
+          this.user = res;
+          localStorage.setItem('user', JSON.stringify(this.user));
           this.snackBar.open('Movie added to faves.', 'OK', {
             duration: 3000,
           });
@@ -66,7 +54,8 @@ export class MovieCardComponent implements OnInit {
     } else {
       this.fetchData.removeFav(id).subscribe(
         (res) => {
-          this.faves = res.Favslist;
+          this.user = res;
+          localStorage.setItem('user', JSON.stringify(this.user));
           this.snackBar.open('Movie removed from faves.', 'OK', {
             duration: 3000,
           });
