@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-movie-card',
@@ -11,7 +12,8 @@ export class MovieCardComponent implements OnInit {
   movies: any[] = [];
   directors: any[] = [];
   user: any = JSON.parse(localStorage.getItem('user') || '') || {};
-  clickEventSubscription: Subscription;
+  public isSlideChecked: boolean = false;
+  public toggleEvents: string[] = [];
 
   constructor(
     public fetchData: FetchApiDataService,
@@ -31,7 +33,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  showFaves(): void {}
+  showFaves($event: MatSlideToggleChange): void {
+    this.isSlideChecked = $event.checked;
+    console.log(this.isSlideChecked);
+  }
 
   toggleFav(id: string): void {
     console.log('toggle reached');

@@ -17,6 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -58,6 +59,7 @@ import { ChangeUserDataDialogComponent } from './change-user-data-dialog/change-
     MatGridListModule,
     MatDividerModule,
     MatListModule,
+    MatSlideToggleModule,
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent],

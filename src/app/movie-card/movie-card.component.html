@@ -1,4 +1,11 @@
-<app-navbar></app-navbar>
+<app-navbar (click)="(showFaves)"></app-navbar>
+<mat-slide-toggle
+  color="warn"
+  aria-label="show only favourite movies"
+  [checked]="isSlideChecked"
+  (change)="showFaves($event)"
+  >Show faves</mat-slide-toggle
+>
 <div class="movie-list">
   <mat-card class="movie-card" *ngFor="let movie of movies; let i = index">
     <div class="img-wrapper">
