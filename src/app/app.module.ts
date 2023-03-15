@@ -18,6 +18,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -66,6 +67,7 @@ import { DirectorDialogComponent } from './director-dialog/director-dialog.compo
     MatDividerModule,
     MatListModule,
     MatSlideToggleModule,
+    MatTabsModule,
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent],

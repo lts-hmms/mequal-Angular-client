@@ -3,6 +3,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { MatDialog } from '@angular/material/dialog';
+
 import { DirectorDialogComponent } from '../director-dialog/director-dialog.component';
 import { GenreDialogComponent } from '../genre-dialog/genre-dialog.component';
 import { SynopsisDialogComponent } from '../synopsis-dialog/synopsis-dialog.component';
@@ -14,7 +15,7 @@ import { SynopsisDialogComponent } from '../synopsis-dialog/synopsis-dialog.comp
 })
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
-  directors: any[] = [];
+  genresArr: any[] = [];
   user: any = JSON.parse(localStorage.getItem('user') || '') || {};
   public isSlideChecked: boolean = false;
   public toggleEvents: string[] = [];
@@ -79,19 +80,27 @@ export class MovieCardComponent implements OnInit {
     }
   }
 
-  openDirectorDialog(): void {
+  openDirectorDialog(name: string, birthyear: string, bio: string): void {
     this.dialog.open(DirectorDialogComponent, {
-      width: '480px',
+      data: {
+        Name: name,
+        Birthyear: birthyear,
+        Bio: bio,
+      },
+      width: '550px',
     });
   }
-  openGenreDialog(): void {
+  openGenreDialog(genresArr: []): void {
     this.dialog.open(GenreDialogComponent, {
-      width: '480px',
+      width: '550px',
     });
   }
-  openSynopsisDialog(): void {
+  openSynopsisDialog(description: string): void {
     this.dialog.open(SynopsisDialogComponent, {
-      width: '480px',
+      data: {
+        Description: description,
+      },
+      width: '550px',
     });
   }
 }

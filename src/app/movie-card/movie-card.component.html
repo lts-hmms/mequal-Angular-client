@@ -20,9 +20,24 @@
       >
     </mat-card-header>
     <mat-card-actions class="mat-card-actions">
-      <button mat-raised-button (click)="openGenreDialog()">Genre</button>
-      <button mat-raised-button (click)="openDirectorDialog()">Director</button>
-      <button mat-raised-button (click)="openSynopsisDialog()">Synopsis</button>
+      <button mat-raised-button (click)="openGenreDialog(movie.Genres)">
+        Genres
+      </button>
+      <button
+        mat-raised-button
+        (click)="
+          openDirectorDialog(
+            movie.Directors[0].Name,
+            movie.Directors[0].Birthyear,
+            movie.Directors[0].Bio
+          )
+        "
+      >
+        Director
+      </button>
+      <button mat-raised-button (click)="openSynopsisDialog(movie.Description)">
+        Synopsis
+      </button>
     </mat-card-actions>
     <mat-card-actions class="faves-row">
       <mat-icon (click)="toggleFav(movie._id)" class="faves-icon">{{
