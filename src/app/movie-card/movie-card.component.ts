@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { MatDialog } from '@angular/material/dialog';
+import { DirectorDialogComponent } from '../director-dialog/director-dialog.component';
+import { GenreDialogComponent } from '../genre-dialog/genre-dialog.component';
+import { SynopsisDialogComponent } from '../synopsis-dialog/synopsis-dialog.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -17,7 +21,8 @@ export class MovieCardComponent implements OnInit {
 
   constructor(
     public fetchData: FetchApiDataService,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    public dialog: MatDialog
   ) {}
 
   // same logic as componentDidMount in react
@@ -72,5 +77,21 @@ export class MovieCardComponent implements OnInit {
         }
       );
     }
+  }
+
+  openDirectorDialog(): void {
+    this.dialog.open(DirectorDialogComponent, {
+      width: '480px',
+    });
+  }
+  openGenreDialog(): void {
+    this.dialog.open(GenreDialogComponent, {
+      width: '480px',
+    });
+  }
+  openSynopsisDialog(): void {
+    this.dialog.open(SynopsisDialogComponent, {
+      width: '480px',
+    });
   }
 }

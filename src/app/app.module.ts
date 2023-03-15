@@ -30,6 +30,9 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ChangeUserDataDialogComponent } from './change-user-data-dialog/change-user-data-dialog.component';
+import { GenreDialogComponent } from './genre-dialog/genre-dialog.component';
+import { SynopsisDialogComponent } from './synopsis-dialog/synopsis-dialog.component';
+import { DirectorDialogComponent } from './director-dialog/director-dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,9 @@ import { ChangeUserDataDialogComponent } from './change-user-data-dialog/change-
     UserProfileComponent,
     NavbarComponent,
     ChangeUserDataDialogComponent,
+    GenreDialogComponent,
+    SynopsisDialogComponent,
+    DirectorDialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@
     <div class="img-wrapper">
       <img class="movie-img" src="{{ movie.ImageUrl }} " />
     </div>
-    <mat-card-header>
+    <mat-card-header class="mat-card-header">
       <mat-card-title class="mat-card-title"
         >{{ movie.Title }} ({{ movie.Year }})</mat-card-title
       >
@@ -19,10 +19,10 @@
         >Directed by: {{ movie.Directors[0].Name }}</mat-card-subtitle
       >
     </mat-card-header>
-    <mat-card-actions class="movie-card-footer">
-      <button mat-button>Genre</button>
-      <button mat-button>Director</button>
-      <button mat-button>Synopsis</button>
+    <mat-card-actions class="mat-card-actions">
+      <button mat-raised-button (click)="openGenreDialog()">Genre</button>
+      <button mat-raised-button (click)="openDirectorDialog()">Director</button>
+      <button mat-raised-button (click)="openSynopsisDialog()">Synopsis</button>
     </mat-card-actions>
     <mat-card-actions class="faves-row">
       <mat-icon (click)="toggleFav(movie._id)" class="faves-icon">{{
