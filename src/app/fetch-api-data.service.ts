@@ -110,15 +110,11 @@ export class FetchApiDataService {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
     return this.http
-      .post(
-        apiUrl + 'users/' + username + '/movies/' + movieId,
-        {},
-        {
-          headers: new HttpHeaders({
-            Authorization: 'Bearer ' + token,
-          }),
-        }
-      )
+      .delete(apiUrl + 'users/' + username + '/movies/' + movieId, {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + token,
+        }),
+      })
       .pipe(catchError(this.handleError));
   }
 
