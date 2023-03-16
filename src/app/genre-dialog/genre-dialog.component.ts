@@ -8,15 +8,11 @@ import { MatTabsModule } from '@angular/material/tabs';
   styleUrls: ['./genre-dialog.component.scss'],
 })
 export class GenreDialogComponent {
-  genresArr: any[] = [];
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
-      genresArr: any;
       Name: string;
       Description: string;
     }
-  ) {
-    console.log(data.genresArr);
-  }
+  ) {}
 }
