@@ -32,6 +32,16 @@
   transform: scale(1.5);
 }
 
+.genre-dialogs {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.genre-button {
+  font-style: italic;
+}
+
 .mat-card-header,
 .mat-card-actions {
   justify-content: center;
