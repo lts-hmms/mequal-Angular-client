@@ -15,10 +15,9 @@ import { SynopsisDialogComponent } from '../synopsis-dialog/synopsis-dialog.comp
 })
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
-  genresArr: any[] = [];
+  allMovies: any[] = [];
   user: any = JSON.parse(localStorage.getItem('user') || '') || {};
-  public isSlideChecked: boolean = false;
-  public toggleEvents: string[] = [];
+  showFaves: boolean = false;
 
   constructor(
     public fetchData: FetchApiDataService,
@@ -34,14 +33,10 @@ export class MovieCardComponent implements OnInit {
   getMovies(): void {
     this.fetchData.getAllMovies().subscribe((res: any) => {
       this.movies = res;
+      this.allMovies = res;
       console.log(this.movies);
       return this.movies;
     });
-  }
-
-  showFaves($event: MatSlideToggleChange): void {
-    this.isSlideChecked = $event.checked;
-    console.log(this.isSlideChecked);
   }
 
   toggleFav(id: string): void {
@@ -80,6 +75,12 @@ export class MovieCardComponent implements OnInit {
     }
   }
 
+  onShowFavesChange(): void {
+    this.movies = this.showFaves
+      ? this.movies.filter((movie) => this.user.Favslist.includes(movie._id))
+      : this.allMovies;
+  }
+
   openDirectorDialog(name: string, birthyear: string, bio: string): void {
     this.dialog.open(DirectorDialogComponent, {
       data: {
@@ -90,8 +91,12 @@ export class MovieCardComponent implements OnInit {
       width: '550px',
     });
   }
-  openGenreDialog(genresArr: []): void {
+  openGenreDialog(name: string, description: string): void {
     this.dialog.open(GenreDialogComponent, {
+      data: {
+        Name: name,
+        Description: description,
+      },
       width: '550px',
     });
   }
