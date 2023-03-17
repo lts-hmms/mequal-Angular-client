@@ -1,9 +1,15 @@
+.toggle-faves {
+  font-size: 18px;
+  float: right;
+}
+
 .movie-list {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: start;
   align-content: center;
+  margin-top: 20px;
 }
 
 .movie-card {
@@ -21,7 +27,7 @@
 
 .movie-img {
   width: 300px;
-  height: 450px;
+  height: 420px;
 }
 
 .faves-row {

@@ -1,21 +1,27 @@
 <app-navbar></app-navbar>
-<mat-grid-list cols="2" rowHeight="600px" style="justify-content: left">
-  <mat-grid-tile>
-    <div>
-      <H1>Profile</H1>
-      <mat-list>
-        <mat-list-item>Username: {{ user.Username }}</mat-list-item>
-        <mat-list-item
-          >Birthday: {{ user.Birthday | date: "longDate" }}</mat-list-item
-        >
 
-        <mat-list-item>Email: {{ user.Email }} </mat-list-item>
+<div class="profile-page">
+  <H1>Profile</H1>
+  <mat-list>
+    <mat-list-item>Username: {{ user.Username }}</mat-list-item>
+    <mat-list-item
+      >Birthday: {{ user.Birthday | date: "longDate" }}</mat-list-item
+    >
 
-        <mat-list-item>Password: ********</mat-list-item>
-        <button mat-raised-button (click)="openUserChangeDataDialog()">
-          Change Data
-        </button>
-      </mat-list>
-    </div>
-  </mat-grid-tile>
-</mat-grid-list>
+    <mat-list-item>Email: {{ user.Email }} </mat-list-item>
+
+    <mat-list-item style="margin-bottom: 30px"
+      >Password: ********</mat-list-item
+    >
+    <button
+      mat-raised-button
+      (click)="openUserChangeDataDialog()"
+      style="margin-right: 10px"
+    >
+      Change Data
+    </button>
+    <button mat-raised-button (click)="openDeleteUserDialog()">
+      Delete Account
+    </button>
+  </mat-list>
+</div>
