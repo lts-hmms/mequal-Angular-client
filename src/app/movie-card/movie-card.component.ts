@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { MatDialog } from '@angular/material/dialog';
 
 import { DirectorDialogComponent } from '../director-dialog/director-dialog.component';
@@ -34,7 +33,6 @@ export class MovieCardComponent implements OnInit {
     this.fetchData.getAllMovies().subscribe((res: any) => {
       this.movies = res;
       this.allMovies = res;
-      console.log(this.movies);
       return this.movies;
     });
   }

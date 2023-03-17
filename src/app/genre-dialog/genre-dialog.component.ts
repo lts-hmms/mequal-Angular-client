@@ -1,6 +1,5 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-genre-dialog',
