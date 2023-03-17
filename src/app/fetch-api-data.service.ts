@@ -130,8 +130,9 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  public deleteUser(username: string): Observable<any> {
+  public deleteUser(): Observable<any> {
     const token = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
     return this.http
       .delete(apiUrl + 'users/' + username, {
         headers: new HttpHeaders({

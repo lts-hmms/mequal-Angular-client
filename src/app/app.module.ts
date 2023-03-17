@@ -34,6 +34,7 @@ import { ChangeUserDataDialogComponent } from './change-user-data-dialog/change-
 import { GenreDialogComponent } from './genre-dialog/genre-dialog.component';
 import { SynopsisDialogComponent } from './synopsis-dialog/synopsis-dialog.component';
 import { DirectorDialogComponent } from './director-dialog/director-dialog.component';
+import { DeleteAccountDialogComponent } from './delete-account-dialog/delete-account-dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { DirectorDialogComponent } from './director-dialog/director-dialog.compo
     GenreDialogComponent,
     SynopsisDialogComponent,
     DirectorDialogComponent,
+    DeleteAccountDialogComponent,
   ],
   imports: [
     BrowserModule,
