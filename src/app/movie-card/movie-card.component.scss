@@ -1,0 +1,55 @@
+.toggle-faves {
+  font-size: 18px;
+  float: right;
+}
+
+.movie-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: start;
+  align-content: center;
+  margin-top: 20px;
+}
+
+.movie-card {
+  margin: 20px;
+}
+
+.mat-card-title {
+  font-weight: 500;
+}
+
+.img-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.movie-img {
+  width: 300px;
+  height: 420px;
+}
+
+.faves-row {
+  justify-content: center;
+}
+
+.faves-icon {
+  transform: scale(1.5);
+}
+
+.genre-dialogs {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.genre-button {
+  font-style: italic;
+}
+
+.mat-card-header,
+.mat-card-actions {
+  justify-content: center;
+  text-align: center;
+}

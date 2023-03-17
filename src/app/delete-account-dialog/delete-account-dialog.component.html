@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Delete Your Profile</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Please type in 'DELETE'</mat-label>
+    <input matInput [(ngModel)]="data.delete" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.delete" cdkFocusInitial>
+    Ok
+  </button>
+</div>

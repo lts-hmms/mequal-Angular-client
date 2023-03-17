@@ -1,0 +1,69 @@
+<app-navbar></app-navbar>
+<mat-slide-toggle
+  class="toggle-faves"
+  color="warn"
+  aria-label="show only favourite movies"
+  (change)="onShowFavesChange()"
+  [(ngModel)]="showFaves"
+  >Show faves</mat-slide-toggle
+>
+<div class="movie-list">
+  <mat-card class="movie-card" *ngFor="let movie of movies; let i = index">
+    <div class="img-wrapper">
+      <img class="movie-img" src="{{ movie.ImageUrl }} " />
+    </div>
+    <div class="mat-card-info-box">
+      <mat-card-header class="mat-card-header">
+        <mat-card-title class="mat-card-title"
+          >{{ movie.Title }}
+        </mat-card-title>
+        <mat-card-subtitle>{{ movie.Year }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions class="mat-card-actions">
+        <!-- <button
+        mat-raised-button
+        *ngFor="let genre of movie.Genres; let i = index"
+        (click)="openGenreDialog(genre.Name, genre.Description)"
+      >
+        Genres
+      </button> -->
+        <button
+          mat-raised-button
+          (click)="
+            openDirectorDialog(
+              movie.Directors[0].Name,
+              movie.Directors[0].Birthyear,
+              movie.Directors[0].Bio
+            )
+          "
+        >
+          Director
+        </button>
+        <button
+          mat-raised-button
+          (click)="openSynopsisDialog(movie.Description)"
+        >
+          Synopsis
+        </button>
+      </mat-card-actions>
+      <div class="genre-dialogs">
+        <mat-card-actions *ngFor="let genre of movie.Genres; let i = index">
+          <button
+            mat-flat-button
+            class="genre-button"
+            (click)="openGenreDialog(genre.Name, genre.Description)"
+          >
+            {{ genre.Name }}
+          </button>
+        </mat-card-actions>
+      </div>
+      <mat-card-actions class="faves-row">
+        <mat-icon (click)="toggleFav(movie._id)" class="faves-icon">{{
+          this.user.Favslist.includes(movie._id)
+            ? "favorite"
+            : "favorite_border"
+        }}</mat-icon>
+      </mat-card-actions>
+    </div>
+  </mat-card>
+</div>

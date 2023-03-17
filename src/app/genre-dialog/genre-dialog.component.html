@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-actions>
+    <button
+      class=".btn-close"
+      mat-icon-button
+      aria-label="close the director details button"
+      mat-dialog-close
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-card-actions>
+  <mat-card-header class="genre-title"> {{ data.Name }}</mat-card-header>
+  <mat-card-content>
+    {{ data.Description }}
+  </mat-card-content>
+</mat-card>
+<!-- 
+<mat-card class="genre-cards" *ngFor="let genre of movie.Genres; let i = index">
+  <mat-card-header class="mat-card-header">
+    <mat-card-title class="mat-card-title">{{ genre.Name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>{{ genre.Description }}</mat-card-content>
+</mat-card> -->
