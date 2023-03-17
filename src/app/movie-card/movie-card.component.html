@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
 <mat-slide-toggle
+  class="toggle-faves"
   color="warn"
   aria-label="show only favourite movies"
   (change)="onShowFavesChange()"
@@ -16,10 +17,7 @@
         <mat-card-title class="mat-card-title"
           >{{ movie.Title }}
         </mat-card-title>
-        <mat-card-subtitle>({{ movie.Year }})</mat-card-subtitle>
-        <mat-card-subtitle
-          >Directed by: {{ movie.Directors[0].Name }}</mat-card-subtitle
-        >
+        <mat-card-subtitle>{{ movie.Year }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-actions class="mat-card-actions">
         <!-- <button
