@@ -7,6 +7,12 @@ import { DirectorDialogComponent } from '../director-dialog/director-dialog.comp
 import { GenreDialogComponent } from '../genre-dialog/genre-dialog.component';
 import { SynopsisDialogComponent } from '../synopsis-dialog/synopsis-dialog.component';
 
+/**
+ * The MovieCardComponent is responsible for displaying the movie cards.
+ * It is called from the main-view.component.
+ * It is also responsible for adding/removing movies from the user's list of favorites, displaying the user's list of favorites and displaying the movie synopsis, director, and genre.
+ */
+
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
@@ -37,6 +43,13 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * This function takes in a string of a movie id and adds or removes it to/from the user's list of favorites.
+   * @param id
+   * @returns User object
+   * @returns Error message
+   * @returns Success message
+   */
   toggleFav(id: string): void {
     console.log('toggle reached');
     if (!this.user.Favslist.includes(id)) {
@@ -73,6 +86,13 @@ export class MovieCardComponent implements OnInit {
     }
   }
 
+  /**
+   * This function takes in a string of a movie id and checks if it is in the user's list of favorites.
+   * @param id
+   * @returns Boolean
+   * @returns Error message
+   * @returns Success message
+   */
   onShowFavesChange(): void {
     this.movies = this.showFaves
       ? this.movies.filter((movie) => this.user.Favslist.includes(movie._id))

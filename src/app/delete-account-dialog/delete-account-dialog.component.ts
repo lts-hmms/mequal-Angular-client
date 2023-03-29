@@ -4,6 +4,10 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 import { DialogData } from '../user-profile/user-profile.component';
 
+/**
+ * The DeleteAccountDialogComponent is responsible for displaying the delete account dialog.
+ */
+
 @Component({
   selector: 'app-delete-account-dialog',
   templateUrl: './delete-account-dialog.component.html',
