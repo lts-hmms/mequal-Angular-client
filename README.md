@@ -6,7 +6,7 @@
 
 The client-side of a movie-app, build as a single-page application, allows users to create an account, logging in, save and remove movies as their favorites in a list, receive information about them and updating and deleting their user profile.
 
-See the [here](https://lts-hmms.github.io/mequal-Angular-client) and visit the [server-side](https://github.com/lts-hmms/movie_api) of the application.
+Watch the live-demo [here](https://lts-hmms.github.io/mequal-Angular-client) and also visit the [server-side](https://github.com/lts-hmms/movie_api) of the application.
 
 ## Built with
 
