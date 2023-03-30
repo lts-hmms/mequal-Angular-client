@@ -4,6 +4,10 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
+/**
+ * This component contains the logic for the user login form.
+ */
+
 @Component({
   selector: 'app-user-login-form',
   templateUrl: './user-login-form.component.html',
@@ -20,6 +24,11 @@ export class UserLoginFormComponent implements OnInit {
   ) {}
   ngOnInit(): void {}
 
+  /**
+   * This is the function responsible for sending the form inputs to the backend, returning a user login and token. It also stores the user login and token in local storage. It then navigates the user to the movies view.
+   * @returns User login
+   * @param userData
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe(
       (result) => {

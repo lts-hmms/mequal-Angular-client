@@ -3,6 +3,10 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef } from '@angular/material/dialog';
 
+/**
+ * This component contains the logic for the update user data dialog.
+ */
+
 @Component({
   selector: 'app-change-user-data-dialog',
   templateUrl: './change-user-data-dialog.component.html',

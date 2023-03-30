@@ -5,6 +5,10 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from './auth.guard';
 
+/**
+ * This module is used to define the routes of the application.
+ */
+
 const routes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent, canActivate: [AuthGuard] },

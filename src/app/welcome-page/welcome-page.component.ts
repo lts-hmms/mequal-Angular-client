@@ -3,6 +3,11 @@ import { UserRegistrationFormComponent } from '../user-registration-form/user-re
 import { UserLoginFormComponent } from '../user-login-form/user-login-form.component';
 import { MatDialog } from '@angular/material/dialog';
 
+/**
+ * The WelcomePageComponent is the landing page for users who are not logged in.
+ * It provides a link to the user registration form and the user login form.
+ */
+
 @Component({
   selector: 'app-welcome-page',
   templateUrl: './welcome-page.component.html',

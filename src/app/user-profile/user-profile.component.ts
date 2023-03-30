@@ -5,6 +5,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { ChangeUserDataDialogComponent } from '../change-user-data-dialog/change-user-data-dialog.component';
 import { DeleteAccountDialogComponent } from '../delete-account-dialog/delete-account-dialog.component';
 
+/**
+ * The UserProfileComponent is the landing page for users who are logged in.
+ *  It displays the user's profile information.
+ */
+
 export interface DialogData {
   delete: string;
 }
@@ -27,6 +32,12 @@ export class UserProfileComponent {
     this.getUser();
   }
 
+  /**
+   * This function opens a dialog window that asks the user to confirm the deletion of their profile and
+   * @function openDeleteUserDialog
+   * @returns A dialog window that asks the user to confirm the deletion of their profile.
+   * @param delete
+   */
   openDeleteUserDialog(): void {
     const dialogRef = this.dialog.open(DeleteAccountDialogComponent, {
       data: { delete: this.delete },
@@ -42,6 +53,12 @@ export class UserProfileComponent {
     });
   }
 
+  /**
+   * @function deleteAccount
+   * @returns A confirmation message that the user's profile has been deleted.
+   * @returns An error message if the user's profile could not be deleted.
+   * @param delete
+   */
   deleteAccount() {
     this.fetchUserData.deleteUser().subscribe(
       (result) => {
@@ -64,6 +81,10 @@ export class UserProfileComponent {
     );
   }
 
+  /**
+   * @function getUser
+   * @returns The user's profile information.
+   */
   getUser(): void {
     this.fetchUserData.getUser().subscribe((resp: any) => {
       this.user = resp;
@@ -71,15 +92,12 @@ export class UserProfileComponent {
     });
   }
 
+  /**
+   * This function opens a dialog window that allows the user to update their profile information.
+   */
   openUserChangeDataDialog(): void {
     this.dialog.open(ChangeUserDataDialogComponent, {
       width: '280px',
     });
   }
-
-  // openDeleteUserDialog(): void {
-  //   this.dialog.open(DeleteAccountDialogComponent, {
-  //     width: '550px',
-  //   });
-  // }
 }

@@ -1,6 +1,10 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
+/**
+ * The GenreDialogComponent is responsible for displaying the movie genre.
+ */
+
 @Component({
   selector: 'app-genre-dialog',
   templateUrl: './genre-dialog.component.html',

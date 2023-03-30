@@ -1,3 +1,7 @@
+/**
+ * This service protects the routes from unauthorized access.
+ */
+
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { AuthguardService } from './authguard.service';

@@ -1,6 +1,17 @@
-# MequalAngularClient
+<h1 align="center">Welcome to "mequal – Angular client"</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
+> The client-side for an application called "mequal" based on its existing server-side code (REST API and mongoDB).
+
+## Description
+
+The client-side of a movie-app, build as a single-page application, allows users to create an account, logging in, save and remove movies as their favorites in a list, receive information about them and updating and deleting their user profile.
+
+See the [here](https://lts-hmms.github.io/mequal-Angular-client) and visit the [server-side](https://github.com/lts-hmms/movie_api) of the application.
+
+## Built with
+
+- [Angular 15+](https://angular.io/)
+- [Angular Material](https://material.angular.io/)
 
 ## Development server
 

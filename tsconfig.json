@@ -19,15 +19,38 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
+  },
+  "typedocOptions": {
+    "entryPoints": [
+      "src/main.ts",
+      "src/app/app.module.ts",
+      "src/app/app-routing.module.ts",
+      "src/app/app.component.ts",
+      "src/app/auth.guard.ts",
+      "src/app/authguard.service.ts",
+      "src/app/fetch-api-data.service.ts",
+      "src/app/user-profile/user-profile.component.ts",
+      "src/app/welcome-page/welcome-page.component.ts",
+      "src/app/user-registration-form/user-registration-form.component.ts",
+      "src/app/user-login-form/user-login-form.component.ts",
+      "src/app/synopsis/synopsis.component.ts",
+      "src/app/navbar/navbar.component.ts",
+      "src/app/movie-card/movie-card.component.ts",
+      "src/app/genre-dialog/genre-dialog.component.ts",
+      "src/app/director-dialog/director-dialog.component.ts",
+      "src/app/delete-account-dialog/delete-account-dialog.component.ts",
+      "src/app/change-user-data-dialog/change-user-data-dialog.component.ts",
+      "src/app/director/director.component.ts",
+      "src/app/genre/genre.component.ts",
+      "src/app/movie-card/movie-card.component.ts"
+    ],
+    "out": "docs"
   }
 }
